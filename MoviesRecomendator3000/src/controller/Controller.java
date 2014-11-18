@@ -43,7 +43,7 @@ public class Controller {
 		
 		
 		OWLDataFactory fac = manager.getOWLDataFactory();
-		OWLClass country = fac.getOWLClass(IRI.create("http://www.semanticweb.org/matheus/ontologies/2014/10/untitled-ontology-13#Recommended"));
+		OWLClass country = fac.getOWLClass(IRI.create("moviesRecommendator#Recommended"));
 		
 		NodeSet<OWLNamedIndividual> individualsNodeSet = reasoner.getInstances(
                 country, true);
