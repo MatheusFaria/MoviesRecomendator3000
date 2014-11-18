@@ -1,0 +1,276 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/matheus/ontologies/2014/10/untitled-ontology-13"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/matheus/ontologies/2014/10/untitled-ontology-13">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#Companion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Movie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Recommended"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecommendedToCompanion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecommendedToMood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#canWatch"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#feels"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFeltOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatedTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Family"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Friends"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#G"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Happy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lover"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Matheus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ToyStory"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Recommended"/>
+        <Class IRI="#Movie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecommendedToCompanion"/>
+        <Class IRI="#Movie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecommendedToMood"/>
+        <Class IRI="#Movie"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Action"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Family"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Friends"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rate"/>
+        <NamedIndividual IRI="#G"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Happy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Lover"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Matheus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Sad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Movie"/>
+        <NamedIndividual IRI="#ToyStory"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Family"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#feels"/>
+        <NamedIndividual IRI="#Matheus"/>
+        <NamedIndividual IRI="#Sad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#relatedTo"/>
+        <NamedIndividual IRI="#Matheus"/>
+        <NamedIndividual IRI="#Family"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#ToyStory"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#ToyStory"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Companion"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#m"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Rate"/>
+                <Variable IRI="urn:swrl#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#m"/>
+                <Variable IRI="urn:swrl#r"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#canWatch"/>
+                <Variable IRI="urn:swrl#c"/>
+                <Variable IRI="urn:swrl#m"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Companion"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#m"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="urn:swrl#u"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#canWatch"/>
+                <Variable IRI="urn:swrl#c"/>
+                <Variable IRI="urn:swrl#m"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#relatedTo"/>
+                <Variable IRI="urn:swrl#u"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#RecommendedToCompanion"/>
+                <Variable IRI="urn:swrl#m"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Genre"/>
+                <Variable IRI="urn:swrl#genre"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Mood"/>
+                <Variable IRI="urn:swrl#mood"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#movie"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="urn:swrl#user"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#feels"/>
+                <Variable IRI="urn:swrl#user"/>
+                <Variable IRI="urn:swrl#mood"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#genre"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isFeltOn"/>
+                <Variable IRI="urn:swrl#mood"/>
+                <Variable IRI="urn:swrl#genre"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#RecommendedToMood"/>
+                <Variable IRI="urn:swrl#movie"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
