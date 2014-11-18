@@ -12,7 +12,7 @@ public class View {
 		String companion = "Family"; //in.next();
 		
 		Movie movie = Controller.recomend(mood, companion);
-		System.out.println(movie.getTitle());
+		System.out.println("I recommend to you: " + movie.getTitle());
 	}
 
 }

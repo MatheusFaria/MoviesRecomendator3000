@@ -11,6 +11,7 @@
 # Generated files
 bin/
 gen/
+settings/
 
 # Gradle files
 .gradle/
@@ -24,3 +25,8 @@ proguard/
 
 # Log Files
 *.log
+
+# Temp Files
+*.swp
+*.swo
+catalog*
