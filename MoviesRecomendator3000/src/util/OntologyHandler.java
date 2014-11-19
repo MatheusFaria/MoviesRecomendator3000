@@ -112,17 +112,21 @@ public class OntologyHandler {
 		return this.getIndividualsOf(klass).iterator().next();
 	}
 	
-	public OWLNamedIndividual getIndividual(String name){
+	public OWLNamedIndividual getIndividual(String name) throws Exception{
+		if(!this.hasIndividual(name))
+			throw new Exception("The individual " + name + " does not exist on ontology");
 		IRI iri = this.createIRI(name);
 		return this.dataFactory.getOWLNamedIndividual(iri);
 	}
 	
-	public OWLObjectProperty getObjectProperty(String name){
+	public OWLObjectProperty getObjectProperty(String name) throws Exception{
+		if(!this.hasObjectProperty(name))
+			throw new Exception("The object property " + name + " does not exist on ontology");
 		IRI iri = this.createIRI(name);
 		return this.dataFactory.getOWLObjectProperty(iri);
 	}
 	
-	public void createRelation(OWLObjectProperty relation, OWLIndividual individual1, OWLIndividual individual2){
+	public void relateIndividuals(OWLObjectProperty relation, OWLIndividual individual1, OWLIndividual individual2){
 		OWLObjectPropertyAssertionAxiom propertyAssertion = this.dataFactory.getOWLObjectPropertyAssertionAxiom(
 				relation, individual1, individual2);
 		AddAxiom newRelation = new AddAxiom(this.ontology, propertyAssertion);
@@ -132,6 +136,16 @@ public class OntologyHandler {
 	public boolean hasClass(String klass){
 		IRI iri = this.createIRI(klass);
 		return this.ontology.containsClassInSignature(iri);
+	}
+	
+	public boolean hasIndividual(String individual){
+		IRI iri = this.createIRI(individual);
+		return this.ontology.containsIndividualInSignature(iri);
+	}
+	
+	public boolean hasObjectProperty(String objectProperty){
+		IRI iri = this.createIRI(objectProperty);
+		return this.ontology.containsObjectPropertyInSignature(iri);
 	}
 
 	public void syncronizeReasoner(){

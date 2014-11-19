@@ -24,14 +24,14 @@ public class Controller {
 		}
 		
 		try {
-			OWLIndividual user = ontologyHandler.getIndividual("Matheus");
+			OWLIndividual user = ontologyHandler.getIndividual("Default");
 			OWLIndividual family = ontologyHandler.getIndividual("Family");
 			OWLIndividual happy = ontologyHandler.getIndividual("Happy");
 			OWLObjectProperty feels = ontologyHandler.getObjectProperty("feels");
 			OWLObjectProperty relatedTo = ontologyHandler.getObjectProperty("relatedTo");
 			
-			ontologyHandler.createRelation(relatedTo, user, family);
-			ontologyHandler.createRelation(feels, user, happy);
+			ontologyHandler.relateIndividuals(relatedTo, user, family);
+			ontologyHandler.relateIndividuals(feels, user, happy);
 			
 			ontologyHandler.syncronizeReasoner();
 			
