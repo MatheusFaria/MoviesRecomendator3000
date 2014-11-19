@@ -109,6 +109,13 @@
         <NamedIndividual IRI="#ToyStory"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Recommended"/>
+        <ObjectUnionOf>
+            <Class IRI="#RecommendedToCompanion"/>
+            <Class IRI="#RecommendedToMood"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#RecommendedToCompanion"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#isRecommendedToCompanion"/>

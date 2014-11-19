@@ -15,6 +15,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
+import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -46,7 +47,7 @@ public class Controller {
 		OWLClass country = fac.getOWLClass(IRI.create("moviesRecommendator#Recommended"));
 		
 		NodeSet<OWLNamedIndividual> individualsNodeSet = reasoner.getInstances(
-                country, true);
+                country, false);
 		Set<OWLNamedIndividual> individuals = individualsNodeSet.getFlattened();
         System.out.println("Instances of pet: ");
         for (OWLNamedIndividual ind : individuals) {
