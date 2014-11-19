@@ -224,16 +224,6 @@
         <NamedIndividual IRI="#Action"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#feels"/>
-        <NamedIndividual IRI="#Matheus"/>
-        <NamedIndividual IRI="#Happy"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#relatedTo"/>
-        <NamedIndividual IRI="#Matheus"/>
-        <NamedIndividual IRI="#Family"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#SadMovie"/>
         <NamedIndividual IRI="#G"/>
