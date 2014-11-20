@@ -3,8 +3,8 @@ package knowledge.moviesrecomendator3000.util;
 import java.io.File;
 import java.util.Set;
 
-import uk.ac.manchester.cs.jfact.JFactFactory;
 
+import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
@@ -60,7 +60,7 @@ public class OntologyHandler {
 	}
 
 	private void createReasoner() {
-		OWLReasonerFactory reasonerFactory = new JFactFactory();
+		OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory();
 
 		OWLReasonerConfiguration config;
 		if(Log.DEBUG){
@@ -97,8 +97,8 @@ public class OntologyHandler {
 		}
 	}
 	
-	public Set<OWLNamedIndividual> getIndividualsOf(String klass) throws Exception{
-		if(!this.hasClass(klass))
+	public Set<OWLNamedIndividual> getIndividualsOf(String klass) throws Exception {
+        if(!this.hasClass(klass))
 			throw new Exception("Class " + klass + " does not exist on your ontology");
 		IRI iri = this.createIRI(klass);
 		OWLClass owlClass = this.dataFactory.getOWLClass(iri);
@@ -149,8 +149,8 @@ public class OntologyHandler {
 		return this.ontology.containsObjectPropertyInSignature(iri);
 	}
 
-	public void syncronizeReasoner(){
-		this.reasoner.flush();
+	public void syncronizeReasoner() {
+        this.reasoner.flush();
 	}
 	
 	public OWLOntology getOntology() {
