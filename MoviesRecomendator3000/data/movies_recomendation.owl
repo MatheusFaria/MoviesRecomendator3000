@@ -106,9 +106,6 @@
         <NamedIndividual IRI="#SadMovie"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Test"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#ToyStory"/>
     </Declaration>
     <EquivalentClasses>
@@ -193,10 +190,6 @@
         <NamedIndividual IRI="#SadMovie"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#User"/>
-        <NamedIndividual IRI="#Test"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Movie"/>
         <NamedIndividual IRI="#ToyStory"/>
     </ClassAssertion>
@@ -239,16 +232,6 @@
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#SadMovie"/>
         <NamedIndividual IRI="#Drama"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#feels"/>
-        <NamedIndividual IRI="#Test"/>
-        <NamedIndividual IRI="#Happy"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#relatedTo"/>
-        <NamedIndividual IRI="#Test"/>
-        <NamedIndividual IRI="#Family"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
