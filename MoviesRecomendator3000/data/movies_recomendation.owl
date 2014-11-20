@@ -73,6 +73,9 @@
         <NamedIndividual IRI="#Action"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Default"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#DieHard"/>
     </Declaration>
     <Declaration>
@@ -94,9 +97,6 @@
         <NamedIndividual IRI="#Lover"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Matheus"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#PG-17"/>
     </Declaration>
     <Declaration>
@@ -110,10 +110,10 @@
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Recommended"/>
-        <ObjectUnionOf>
+        <ObjectIntersectionOf>
             <Class IRI="#RecommendedToCompanion"/>
             <Class IRI="#RecommendedToMood"/>
-        </ObjectUnionOf>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#RecommendedToCompanion"/>
@@ -146,6 +146,10 @@
         <NamedIndividual IRI="#Action"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Default"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Movie"/>
         <NamedIndividual IRI="#DieHard"/>
     </ClassAssertion>
@@ -172,10 +176,6 @@
     <ClassAssertion>
         <Class IRI="#Companion"/>
         <NamedIndividual IRI="#Lover"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#User"/>
-        <NamedIndividual IRI="#Matheus"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Rate"/>
