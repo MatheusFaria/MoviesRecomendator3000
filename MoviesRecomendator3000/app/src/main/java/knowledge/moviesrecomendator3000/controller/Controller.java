@@ -1,5 +1,10 @@
 package knowledge.moviesrecomendator3000.controller;
 
+import android.content.Context;
+import android.util.Log;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Set;
 
 import org.semanticweb.owlapi.model.OWLIndividual;
@@ -8,35 +13,35 @@ import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import knowledge.moviesrecomendator3000.model.Movie;
-import knowledge.moviesrecomendator3000.util.Log;
 import knowledge.moviesrecomendator3000.util.OntologyHandler;
 
 public class Controller {
-	private static final String ONTOLOGY_PATH = "data/movies_recomendation.owl";
 
-	public static Movie recomend(String mood, String companion) {
+	public static Movie recomend(String mood, String companion, InputStream fileIS) {
 		OntologyHandler ontologyHandler = null;
 		try {
-			ontologyHandler = new OntologyHandler(Controller.ONTOLOGY_PATH);
+			ontologyHandler = new OntologyHandler(fileIS);
 		} catch (OWLOntologyCreationException e) {
 			e.printStackTrace();
-		}
-		
-		try {
+		} catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
 			OWLIndividual user = ontologyHandler.getIndividual("Default");
-			OWLIndividual family = ontologyHandler.getIndividual("Family");
-			OWLIndividual happy = ontologyHandler.getIndividual("Happy");
+			OWLIndividual family = ontologyHandler.getIndividual(companion);
+			OWLIndividual happy = ontologyHandler.getIndividual(mood);
+
 			OWLObjectProperty feels = ontologyHandler.getObjectProperty("feels");
 			OWLObjectProperty relatedTo = ontologyHandler.getObjectProperty("relatedTo");
 			
 			ontologyHandler.relateIndividuals(relatedTo, user, family);
 			ontologyHandler.relateIndividuals(feels, user, happy);
-			
 			ontologyHandler.syncronizeReasoner();
 			
 			Set<OWLNamedIndividual> recommendeds = ontologyHandler.getIndividualsOf("Recommended");
 			for (OWLNamedIndividual owlNamedIndividual : recommendeds) {
-				Log.debug(""+ owlNamedIndividual);
+				Log.i("result", "" + owlNamedIndividual);
 			}
 			
 		} catch (Exception e) {
@@ -47,5 +52,4 @@ public class Controller {
 		a.setTitle("Oi");
 		return a;
 	}
-
 }

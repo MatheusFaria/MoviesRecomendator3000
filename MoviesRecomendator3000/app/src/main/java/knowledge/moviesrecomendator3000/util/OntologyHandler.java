@@ -1,6 +1,10 @@
 package knowledge.moviesrecomendator3000.util;
 
+import android.content.Context;
+
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Set;
 
 
@@ -25,15 +29,15 @@ import org.semanticweb.owlapi.reasoner.OWLReasonerConfiguration;
 import org.semanticweb.owlapi.reasoner.OWLReasonerFactory;
 import org.semanticweb.owlapi.reasoner.SimpleConfiguration;
 
-public class OntologyHandler {	
-	private String ontologyFilePath;
+public class OntologyHandler {
+    private InputStream fileIS;
 	private OWLOntologyManager manager;
 	private OWLOntology ontology;
 	private OWLReasoner reasoner;
 	private OWLDataFactory dataFactory;
 	
-	public OntologyHandler(String ontologyFilePath) throws OWLOntologyCreationException {
-		this.ontologyFilePath = ontologyFilePath;
+	public OntologyHandler(InputStream fileIS) throws OWLOntologyCreationException, IOException {
+        this.fileIS = fileIS;
 		
 		this.createOntologyManager();
 		this.createDataFactory();
@@ -50,12 +54,8 @@ public class OntologyHandler {
 		this.manager = OWLManager.createOWLOntologyManager();
 	}
 	
-	private void loadOntologyFromFile() throws OWLOntologyCreationException {
-		File ontology_file = new File(this.ontologyFilePath);
-
-		IRI docIRI = IRI.create(ontology_file);
-
-		this.ontology = this.manager.loadOntologyFromOntologyDocument(docIRI);
+	private void loadOntologyFromFile() throws OWLOntologyCreationException, IOException {
+		this.ontology = this.manager.loadOntologyFromOntologyDocument(this.fileIS);
 		Log.debug("Ontology Loaded");
 	}
 
