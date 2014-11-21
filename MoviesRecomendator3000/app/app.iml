@@ -80,6 +80,8 @@
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="HermiT" level="project" />
+    <orderEntry type="library" exported="" name="org.semanticweb.HermiT" level="project" />
+    <orderEntry type="library" exported="" name="owlapi-distribution-3.4.3-bin" level="project" />
   </component>
 </module>
 

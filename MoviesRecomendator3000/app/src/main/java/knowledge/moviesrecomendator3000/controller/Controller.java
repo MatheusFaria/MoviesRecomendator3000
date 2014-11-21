@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Set;
 
 import org.semanticweb.owlapi.model.OWLIndividual;
@@ -17,15 +18,18 @@ import knowledge.moviesrecomendator3000.util.OntologyHandler;
 
 public class Controller {
 
-	public static Movie recomend(String mood, String companion, InputStream fileIS) {
+	public static ArrayList<Movie> recomend(String mood, String companion, InputStream fileIS) {
 		OntologyHandler ontologyHandler = null;
-		try {
+
+        try {
 			ontologyHandler = new OntologyHandler(fileIS);
 		} catch (OWLOntologyCreationException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
             e.printStackTrace();
         }
+
+        ArrayList<Movie> recommendedMovies = new ArrayList<Movie>();
 
         try {
 			OWLIndividual user = ontologyHandler.getIndividual("Default");
@@ -41,15 +45,18 @@ public class Controller {
 			
 			Set<OWLNamedIndividual> recommendeds = ontologyHandler.getIndividualsOf("Recommended");
 			for (OWLNamedIndividual owlNamedIndividual : recommendeds) {
-				Log.i("result", "" + owlNamedIndividual);
+                Movie newRecommendedMovie = new Movie();
+                newRecommendedMovie.setTitle("" + owlNamedIndividual);
+
+                recommendedMovies.add(newRecommendedMovie);
+				Log.i("Result", "" + owlNamedIndividual);
 			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		Movie a = new Movie();
-		a.setTitle("Oi");
-		return a;
+        ontologyHandler.finalizeReasoner();
+		return recommendedMovies;
 	}
 }

@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MoviesRecomendator3000</string>
+    <string name="app_name">Movies Recommendator 3000</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="txtView_mood">How are you feeling?</string>
+    <string name="txtView_companion">Who is with you?</string>
+    <string name="btn_recommend">Recommend!</string>
+
+    <string-array name="moods_list">
+        <item>Happy</item>
+        <item>Sad</item>
+        <item>Depressed</item>
+        <item>Angry</item>
+        <item>Good</item>
+        <item>Mad</item>
+        <item>Interested</item>
+    </string-array>
+
+    <string-array name="companions_list">
+        <item>Friends</item>
+        <item>Family</item>
+        <item>Lover</item>
+        <item>Coworker</item>
+    </string-array>
 
 </resources>

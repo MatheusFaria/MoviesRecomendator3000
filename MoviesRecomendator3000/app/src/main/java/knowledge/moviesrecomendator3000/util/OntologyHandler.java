@@ -44,9 +44,7 @@ public class OntologyHandler {
 		
 		this.loadOntologyFromFile();
 		this.createReasoner();
-		
-		this.reasoner.precomputeInferences();
-		
+
 		Log.debug("Ontology Consistent", "Ontology Inconsistent", this.reasoner.isConsistent());
 	}
 	
@@ -170,6 +168,9 @@ public class OntologyHandler {
 	public OWLDataFactory getFactory() {
 		return dataFactory;
 	}
-	
+
+    public void finalizeReasoner() {
+        this.reasoner.dispose();
+    }
 	
 }
