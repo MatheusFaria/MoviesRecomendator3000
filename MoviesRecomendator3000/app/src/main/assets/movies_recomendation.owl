@@ -34,6 +34,9 @@
         <Class IRI="#Movie"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#MovieType"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Rate"/>
     </Declaration>
     <Declaration>
@@ -44,6 +47,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#RecommendedToMood"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SimilarMovie"/>
     </Declaration>
     <Declaration>
         <Class IRI="#User"/>
@@ -61,16 +67,34 @@
         <ObjectProperty IRI="#isFeltOn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isRecommendedToCompanion"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isRecommendedToMood"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relatedTo"/>
+        <ObjectProperty IRI="#isRelatedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSimilarTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wantsToSee"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#director"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Biography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Co-worker"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Default"/>
@@ -79,13 +103,22 @@
         <NamedIndividual IRI="#DieHard"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#DieHard2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Documentary"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Drama"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Entertainment"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Family"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Friends"/>
+        <NamedIndividual IRI="#Friend"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#G"/>
@@ -94,16 +127,43 @@
         <NamedIndividual IRI="#Happy"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#History"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Information"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Interested"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Lover"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#PG-17"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#No-one"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PG-13"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#R"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Sad"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SadMovie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SuperSizeMe"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#ToyStory"/>
@@ -129,6 +189,13 @@
             <Class IRI="#User"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SimilarMovie"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isSimilarTo"/>
+            <Class IRI="#Movie"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Recommended"/>
         <Class IRI="#Movie"/>
@@ -141,9 +208,21 @@
         <Class IRI="#RecommendedToMood"/>
         <Class IRI="#Movie"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SimilarMovie"/>
+        <Class IRI="#Movie"/>
+    </SubClassOf>
     <ClassAssertion>
         <Class IRI="#Genre"/>
         <NamedIndividual IRI="#Action"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Biography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Co-worker"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#User"/>
@@ -154,8 +233,20 @@
         <NamedIndividual IRI="#DieHard"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Movie"/>
+        <NamedIndividual IRI="#DieHard2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Genre"/>
         <NamedIndividual IRI="#Drama"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MovieType"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Companion"/>
@@ -163,7 +254,7 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Companion"/>
-        <NamedIndividual IRI="#Friends"/>
+        <NamedIndividual IRI="#Friend"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Rate"/>
@@ -174,12 +265,40 @@
         <NamedIndividual IRI="#Happy"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#History"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MovieType"/>
+        <NamedIndividual IRI="#Information"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Interested"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Companion"/>
         <NamedIndividual IRI="#Lover"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Rate"/>
-        <NamedIndividual IRI="#PG-17"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#No-one"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rate"/>
+        <NamedIndividual IRI="#PG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rate"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rate"/>
+        <NamedIndividual IRI="#R"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Mood"/>
@@ -190,18 +309,96 @@
         <NamedIndividual IRI="#SadMovie"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Student"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Movie"/>
+        <NamedIndividual IRI="#SuperSizeMe"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Movie"/>
         <NamedIndividual IRI="#ToyStory"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Action"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Biography"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#feels"/>
+        <NamedIndividual IRI="#Default"/>
+        <NamedIndividual IRI="#Happy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRelatedTo"/>
+        <NamedIndividual IRI="#Default"/>
+        <NamedIndividual IRI="#Family"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#DieHard"/>
-        <NamedIndividual IRI="#PG-17"/>
+        <NamedIndividual IRI="#PG-13"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#DieHard"/>
         <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#DieHard2"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#DieHard2"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Documentary"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Drama"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
@@ -209,19 +406,79 @@
         <NamedIndividual IRI="#G"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Family"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
-        <NamedIndividual IRI="#Friends"/>
+        <NamedIndividual IRI="#Friend"/>
         <NamedIndividual IRI="#G"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
-        <NamedIndividual IRI="#Friends"/>
-        <NamedIndividual IRI="#PG-17"/>
+        <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFeltOn"/>
         <NamedIndividual IRI="#Happy"/>
         <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#History"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
@@ -234,6 +491,21 @@
         <NamedIndividual IRI="#Drama"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Student"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#SuperSizeMe"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has"/>
+        <NamedIndividual IRI="#SuperSizeMe"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#ToyStory"/>
         <NamedIndividual IRI="#Action"/>
@@ -243,6 +515,72 @@
         <NamedIndividual IRI="#ToyStory"/>
         <NamedIndividual IRI="#G"/>
     </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#director"/>
+        <NamedIndividual IRI="#DieHard"/>
+        <Literal datatypeIRI="&xsd;string">Bruce Willis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#director"/>
+        <NamedIndividual IRI="#DieHard2"/>
+        <Literal datatypeIRI="&xsd;string">Bruce Willis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyRange>
+        <DataProperty IRI="#director"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Companion"/>
+                <Variable IRI="urn:swrl#companion"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#movie"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#MovieType"/>
+                <Variable IRI="urn:swrl#type"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="urn:swrl#user"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#canWatch"/>
+                <Variable IRI="urn:swrl#companion"/>
+                <Variable IRI="urn:swrl#movie"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#type"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRelatedTo"/>
+                <Variable IRI="urn:swrl#user"/>
+                <Variable IRI="urn:swrl#companion"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#wantsToSee"/>
+                <Variable IRI="urn:swrl#companion"/>
+                <Variable IRI="urn:swrl#type"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#companion"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isRecommendedToCompanion"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#user"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
     <DLSafeRule>
         <Body>
             <ClassAtom>
@@ -273,39 +611,6 @@
                 <ObjectProperty IRI="#canWatch"/>
                 <Variable IRI="urn:swrl#companion"/>
                 <Variable IRI="urn:swrl#movie"/>
-            </ObjectPropertyAtom>
-        </Head>
-    </DLSafeRule>
-    <DLSafeRule>
-        <Body>
-            <ClassAtom>
-                <Class IRI="#Companion"/>
-                <Variable IRI="urn:swrl#companion"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Movie"/>
-                <Variable IRI="urn:swrl#movie"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#User"/>
-                <Variable IRI="urn:swrl#user"/>
-            </ClassAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#canWatch"/>
-                <Variable IRI="urn:swrl#companion"/>
-                <Variable IRI="urn:swrl#movie"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#relatedTo"/>
-                <Variable IRI="urn:swrl#user"/>
-                <Variable IRI="urn:swrl#companion"/>
-            </ObjectPropertyAtom>
-        </Body>
-        <Head>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#isRecommendedToCompanion"/>
-                <Variable IRI="urn:swrl#movie"/>
-                <Variable IRI="urn:swrl#user"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
@@ -345,6 +650,11 @@
         </Body>
         <Head>
             <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#mood"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
                 <ObjectProperty IRI="#isRecommendedToMood"/>
                 <Variable IRI="urn:swrl#movie"/>
                 <Variable IRI="urn:swrl#user"/>
@@ -354,19 +664,34 @@
     <DLSafeRule>
         <Body>
             <ClassAtom>
-                <Class IRI="#RecommendedToCompanion"/>
+                <Class IRI="#Genre"/>
+                <Variable IRI="urn:swrl#genre"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
                 <Variable IRI="urn:swrl#movie"/>
             </ClassAtom>
             <ClassAtom>
-                <Class IRI="#RecommendedToMood"/>
-                <Variable IRI="urn:swrl#movie"/>
+                <Class IRI="#MovieType"/>
+                <Variable IRI="urn:swrl#type"/>
             </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
+                <Variable IRI="urn:swrl#movie"/>
+                <Variable IRI="urn:swrl#genre"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isPartOf"/>
+                <Variable IRI="urn:swrl#genre"/>
+                <Variable IRI="urn:swrl#type"/>
+            </ObjectPropertyAtom>
         </Body>
         <Head>
-            <ClassAtom>
-                <Class IRI="#Recommended"/>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#has"/>
                 <Variable IRI="urn:swrl#movie"/>
-            </ClassAtom>
+                <Variable IRI="urn:swrl#type"/>
+            </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
     <AnnotationAssertion>
@@ -387,8 +712,18 @@ Companion canWatch Movie</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#relatedTo</IRI>
+        <IRI>#isPartOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Genre isPartOf MovieType</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRelatedTo</IRI>
         <Literal datatypeIRI="&rdf;PlainLiteral">User isRelatedTo Companion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wantsToSee</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Componanion wantsToSee MovieType</Literal>
     </AnnotationAssertion>
 </Ontology>
 
