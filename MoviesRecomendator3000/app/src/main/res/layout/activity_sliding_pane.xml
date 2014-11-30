@@ -1,0 +1,101 @@
+<knowledge.moviesrecomendator3000.view.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_pane"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    custom:collapsed_height="100" >
+
+    <ScrollView
+        android:id="@+id/upper_frame_layout"
+        android:background="@android:color/holo_blue_bright"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:layout_centerInParent="true"
+            android:onClick="animate" />
+
+        </ScrollView>
+
+    <ScrollView
+        android:id="@+id/lower_frame_layout"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sliding Pane!"
+            android:layout_marginTop="100dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</knowledge.moviesrecomendator3000.view.SlidingPaneLayout>
