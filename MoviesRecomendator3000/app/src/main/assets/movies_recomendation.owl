@@ -88,22 +88,49 @@
         <DataProperty IRI="#director"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#title"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Adventure"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Angry"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Biography"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Child"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Classmate"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Co-worker"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Comedy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Crime"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Default"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Depressed"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DieHard"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#DieHard2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Disapointed"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Documentary"/>
@@ -115,7 +142,7 @@
         <NamedIndividual IRI="#Entertainment"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Family"/>
+        <NamedIndividual IRI="#Fantasy"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Friend"/>
@@ -124,10 +151,19 @@
         <NamedIndividual IRI="#G"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Great"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Happy"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#History"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hopeful"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Horror"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Information"/>
@@ -139,10 +175,28 @@
         <NamedIndividual IRI="#Lover"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Mad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mistery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Musical"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#NC-17"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#No-one"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Noir"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NotRated"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ok"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#PG"/>
@@ -151,7 +205,16 @@
         <NamedIndividual IRI="#PG-13"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Parent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Proud"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#R"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Romance"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Sad"/>
@@ -160,13 +223,37 @@
         <NamedIndividual IRI="#SadMovie"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Scared"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SciFi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sibling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Silly"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sports"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Student"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#SuperSizeMe"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Thriller"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#ToyStory"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#War"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Western"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="#Recommended"/>
@@ -218,15 +305,43 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Adventure"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Angry"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
         <NamedIndividual IRI="#Biography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Child"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Classmate"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Companion"/>
         <NamedIndividual IRI="#Co-worker"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Comedy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Crime"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#User"/>
         <NamedIndividual IRI="#Default"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Depressed"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Movie"/>
@@ -235,6 +350,10 @@
     <ClassAssertion>
         <Class IRI="#Movie"/>
         <NamedIndividual IRI="#DieHard2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Disapointed"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Genre"/>
@@ -249,8 +368,8 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Companion"/>
-        <NamedIndividual IRI="#Family"/>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Fantasy"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Companion"/>
@@ -262,11 +381,23 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Great"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
         <NamedIndividual IRI="#Happy"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Genre"/>
         <NamedIndividual IRI="#History"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Hopeful"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Horror"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#MovieType"/>
@@ -281,12 +412,36 @@
         <NamedIndividual IRI="#Lover"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Mad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Mistery"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Musical"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Rate"/>
         <NamedIndividual IRI="#NC-17"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Companion"/>
         <NamedIndividual IRI="#No-one"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Noir"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rate"/>
+        <NamedIndividual IRI="#NotRated"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Ok"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Rate"/>
@@ -297,8 +452,20 @@
         <NamedIndividual IRI="#PG-13"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Parent"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Proud"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Rate"/>
         <NamedIndividual IRI="#R"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Romance"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Mood"/>
@@ -309,6 +476,26 @@
         <NamedIndividual IRI="#SadMovie"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Scared"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#SciFi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Companion"/>
+        <NamedIndividual IRI="#Sibling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Mood"/>
+        <NamedIndividual IRI="#Silly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Sports"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Companion"/>
         <NamedIndividual IRI="#Student"/>
     </ClassAssertion>
@@ -317,8 +504,20 @@
         <NamedIndividual IRI="#SuperSizeMe"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Thriller"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Movie"/>
         <NamedIndividual IRI="#ToyStory"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#War"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Genre"/>
+        <NamedIndividual IRI="#Western"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOf"/>
@@ -327,13 +526,68 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Adventure"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Angry"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Angry"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
         <NamedIndividual IRI="#Biography"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Child"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Child"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Child"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Classmate"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Classmate"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Classmate"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Classmate"/>
         <NamedIndividual IRI="#Information"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
         <NamedIndividual IRI="#Co-worker"/>
         <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Co-worker"/>
+        <NamedIndividual IRI="#NotRated"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
@@ -361,14 +615,39 @@
         <NamedIndividual IRI="#Information"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Comedy"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Crime"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#feels"/>
         <NamedIndividual IRI="#Default"/>
         <NamedIndividual IRI="#Happy"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isRelatedTo"/>
-        <NamedIndividual IRI="#Default"/>
-        <NamedIndividual IRI="#Family"/>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Depressed"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Depressed"/>
+        <NamedIndividual IRI="#Crime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Depressed"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Depressed"/>
+        <NamedIndividual IRI="#Noir"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
@@ -383,12 +662,27 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#DieHard2"/>
-        <NamedIndividual IRI="#Action"/>
+        <NamedIndividual IRI="#PG-13"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#DieHard2"/>
-        <NamedIndividual IRI="#PG-13"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Disapointed"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Disapointed"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Disapointed"/>
+        <NamedIndividual IRI="#Documentary"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOf"/>
@@ -401,24 +695,39 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#canWatch"/>
-        <NamedIndividual IRI="#Family"/>
-        <NamedIndividual IRI="#G"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#wantsToSee"/>
-        <NamedIndividual IRI="#Family"/>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Fantasy"/>
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
         <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Friend"/>
         <NamedIndividual IRI="#G"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
         <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Friend"/>
         <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Friend"/>
+        <NamedIndividual IRI="#NotRated"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#wantsToSee"/>
@@ -427,8 +736,53 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFeltOn"/>
-        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Great"/>
+        <NamedIndividual IRI="#Comedy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Great"/>
+        <NamedIndividual IRI="#SciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Great"/>
+        <NamedIndividual IRI="#Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Great"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Great"/>
         <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Great"/>
+        <NamedIndividual IRI="#Adventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Romance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Western"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Comedy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Happy"/>
+        <NamedIndividual IRI="#Adventure"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOf"/>
@@ -437,8 +791,103 @@
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Adventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Sports"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Romance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Musical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Hopeful"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Horror"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#History"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#Western"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
         <NamedIndividual IRI="#Interested"/>
         <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#Thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#Mistery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Interested"/>
+        <NamedIndividual IRI="#Biography"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#NC-17"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#NotRated"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Lover"/>
+        <NamedIndividual IRI="#R"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#wantsToSee"/>
@@ -446,14 +895,34 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#canWatch"/>
-        <NamedIndividual IRI="#No-one"/>
-        <NamedIndividual IRI="#NC-17"/>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Mad"/>
+        <NamedIndividual IRI="#Thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Mad"/>
+        <NamedIndividual IRI="#Action"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Mad"/>
+        <NamedIndividual IRI="#Horror"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Mistery"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Musical"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
         <NamedIndividual IRI="#No-one"/>
-        <NamedIndividual IRI="#R"/>
+        <NamedIndividual IRI="#NC-17"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#canWatch"/>
@@ -471,6 +940,16 @@
         <NamedIndividual IRI="#PG"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#R"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#No-one"/>
+        <NamedIndividual IRI="#NotRated"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#wantsToSee"/>
         <NamedIndividual IRI="#No-one"/>
         <NamedIndividual IRI="#Information"/>
@@ -481,6 +960,151 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Noir"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Crime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Noir"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Documentary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Biography"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Mistery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#SciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Sports"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Adventure"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Ok"/>
+        <NamedIndividual IRI="#Thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Parent"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Parent"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Parent"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Parent"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Parent"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Proud"/>
+        <NamedIndividual IRI="#Musical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Proud"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Proud"/>
+        <NamedIndividual IRI="#History"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Proud"/>
+        <NamedIndividual IRI="#Biography"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Proud"/>
+        <NamedIndividual IRI="#Sports"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Romance"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#Crime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#History"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#Mistery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#War"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Sad"/>
+        <NamedIndividual IRI="#Noir"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#SadMovie"/>
         <NamedIndividual IRI="#G"/>
@@ -489,6 +1113,91 @@
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#SadMovie"/>
         <NamedIndividual IRI="#Drama"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Scared"/>
+        <NamedIndividual IRI="#Crime"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Scared"/>
+        <NamedIndividual IRI="#Mistery"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Scared"/>
+        <NamedIndividual IRI="#Horror"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#SciFi"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Sibling"/>
+        <NamedIndividual IRI="#PG"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Sibling"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Sibling"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wantsToSee"/>
+        <NamedIndividual IRI="#Sibling"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Silly"/>
+        <NamedIndividual IRI="#Fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Silly"/>
+        <NamedIndividual IRI="#SciFi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Silly"/>
+        <NamedIndividual IRI="#Musical"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Silly"/>
+        <NamedIndividual IRI="#Romance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFeltOn"/>
+        <NamedIndividual IRI="#Silly"/>
+        <NamedIndividual IRI="#Comedy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Sports"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Student"/>
+        <NamedIndividual IRI="#PG-13"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Student"/>
+        <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#canWatch"/>
+        <NamedIndividual IRI="#Student"/>
+        <NamedIndividual IRI="#PG"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#wantsToSee"/>
@@ -506,6 +1215,11 @@
         <NamedIndividual IRI="#PG-13"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Thriller"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#ToyStory"/>
         <NamedIndividual IRI="#Action"/>
@@ -514,6 +1228,21 @@
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#ToyStory"/>
         <NamedIndividual IRI="#G"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#War"/>
+        <NamedIndividual IRI="#Entertainment"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#War"/>
+        <NamedIndividual IRI="#Information"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isPartOf"/>
+        <NamedIndividual IRI="#Western"/>
+        <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#director"/>
@@ -527,6 +1256,10 @@
     </DataPropertyAssertion>
     <DataPropertyRange>
         <DataProperty IRI="#director"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#title"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DLSafeRule>
@@ -691,6 +1424,39 @@
                 <ObjectProperty IRI="#has"/>
                 <Variable IRI="urn:swrl#movie"/>
                 <Variable IRI="urn:swrl#type"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#movie1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Movie"/>
+                <Variable IRI="urn:swrl#movie2"/>
+            </ClassAtom>
+            <DataRangeAtom>
+                <Datatype abbreviatedIRI="xsd:string"/>
+                <Variable IRI="urn:swrl#director"/>
+            </DataRangeAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#director"/>
+                <Variable IRI="urn:swrl#movie1"/>
+                <Variable IRI="urn:swrl#director"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#director"/>
+                <Variable IRI="urn:swrl#movie2"/>
+                <Variable IRI="urn:swrl#director"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isSimilarTo"/>
+                <Variable IRI="urn:swrl#movie1"/>
+                <Variable IRI="urn:swrl#movie2"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
