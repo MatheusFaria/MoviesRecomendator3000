@@ -2,6 +2,7 @@ package knowledge.moviesrecomendator3000.util;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 import java.util.Set;
 
 
@@ -15,11 +16,12 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.RemoveAxiom;
 import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
-import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -43,7 +45,7 @@ public class OntologyHandler {
 		this.loadOntologyFromFile();
 		this.createReasoner();
 
-		Log.debug("Ontology Consistent", "Ontology Inconsistent", this.reasoner.isConsistent());
+		Logger.debug("Ontology Consistent", "Ontology Inconsistent", this.reasoner.isConsistent());
 	}
 	
 	private void createOntologyManager(){
@@ -52,14 +54,14 @@ public class OntologyHandler {
 	
 	private void loadOntologyFromFile() throws OWLOntologyCreationException, IOException {
 		this.ontology = this.manager.loadOntologyFromOntologyDocument(this.fileIS);
-		Log.debug("Ontology Loaded");
+		Logger.debug("Ontology Loaded");
 	}
 
 	private void createReasoner() {
 		OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory();
 
 		OWLReasonerConfiguration config;
-		if(Log.DEBUG){
+		if(Logger.DEBUG){
 			ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();
 			config = new SimpleConfiguration(progressMonitor);
 		} else {
@@ -82,13 +84,13 @@ public class OntologyHandler {
 		Set<OWLClass> unsatisfiable = bottomNode.getEntitiesMinusBottom();
 		
 		if (!unsatisfiable.isEmpty()) {
-			Log.debug("The following classes are unsatisfiable: ");
+			Logger.debug("The following classes are unsatisfiable: ");
 			for (OWLClass cls : unsatisfiable) {
-				Log.debug("    " + cls);
+				Logger.debug("    " + cls);
 			}
 			return true;
 		} else {
-			Log.debug("There are no unsatisfiable classes");
+			Logger.debug("There are no unsatisfiable classes");
 			return false;
 		}
 	}
@@ -129,7 +131,39 @@ public class OntologyHandler {
 		AddAxiom newRelation = new AddAxiom(this.ontology, propertyAssertion);
 		this.manager.applyChange(newRelation);
 	}
-	
+
+    public void clearRelationsFromIndividual(OWLIndividual individual) {
+        Map<OWLObjectPropertyExpression,Set<OWLIndividual>> objMap = individual.getObjectPropertyValues(this.getOntology());
+        Set<OWLObjectPropertyExpression> objectProperties = objMap.keySet();
+
+        for(OWLObjectPropertyExpression exp: objectProperties){
+            if(objMap.get(exp).iterator().hasNext()) {
+                OWLIndividual individual2 = objMap.get(exp).iterator().next();
+                if(Logger.DEBUG){
+                    Logger.debug("Removing Property " + exp.getNamedProperty() + " - " + individual2);
+                }
+                OWLObjectPropertyAssertionAxiom propertyAssertion = this.dataFactory.getOWLObjectPropertyAssertionAxiom(
+                        exp.getNamedProperty(), individual, individual2);
+                RemoveAxiom removeAxiom = new RemoveAxiom(this.ontology, propertyAssertion);
+                this.manager.applyChange(removeAxiom);
+            }
+        }
+    }
+
+    public void printObjectPropertiesFromIndividual(OWLIndividual individual){
+        Map<OWLObjectPropertyExpression,Set<OWLIndividual>> objMap = individual.getObjectPropertyValues(this.getOntology());
+        Set<OWLObjectPropertyExpression> objectProperties = objMap.keySet();
+
+        Logger.debug("Object Properties of " + individual);
+        for(OWLObjectPropertyExpression exp: objectProperties){
+            Logger.debug(exp.getNamedProperty().getIRI().toString() + ": " + objMap.get(exp));
+        }
+    }
+
+    public void saveOntology(){
+        //this.getManager().saveOntology();
+    }
+
 	public boolean hasClass(String klass){
 		IRI iri = this.createIRI(klass);
 		return this.ontology.containsClassInSignature(iri);
@@ -145,7 +179,7 @@ public class OntologyHandler {
 		return this.ontology.containsObjectPropertyInSignature(iri);
 	}
 
-	public void syncronizeReasoner() {
+	public void synchronizeReasoner() {
         this.reasoner.flush();
 	}
 	

@@ -31,19 +31,6 @@ public class HomeActivity extends Activity {
 
         this.moodSpinner = (Spinner) findViewById(R.id.spinner_mood);
         this.companionSpinner = (Spinner) findViewById(R.id.spinner_companion);
-
-        try {
-            ontologyFileIS = getAssets().open(ONTOLOGY_PATH);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.i("Ontology creation", "error");
-        }
-
-        //try {
-            Controller.initializeOntology(ontologyFileIS);
-        //} catch (Exception e) {
-            Log.i("Initialize Ontology", "Error initializing the ontology/");
-        //}
     }
 
 
@@ -72,7 +59,14 @@ public class HomeActivity extends Activity {
 
         String movieTitles = "";
 
-        ArrayList<Movie> recommendedMovies = Controller.recomend(mood, companion);
+        try {
+            ontologyFileIS = getAssets().open(ONTOLOGY_PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i("Ontology creation", "error");
+        }
+
+        ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion, ontologyFileIS);
         for(Movie recommendedMovie : recommendedMovies) {
             movieTitles += recommendedMovie.getTitle()+"\n";
             Log.i("Recommendation", "I recommend to you: " + recommendedMovie.getTitle());

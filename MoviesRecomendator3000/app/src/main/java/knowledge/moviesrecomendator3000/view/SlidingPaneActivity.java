@@ -39,17 +39,16 @@ public class SlidingPaneActivity extends Activity {
         setContentView(R.layout.activity_sliding_pane);
 
         initViews();
-        initOntology();
     }
 
     public void recommendButtonClick(View view) {
         String mood = this.moodSpinner.getSelectedItem().toString();
         String companion = this.companionSpinner.getSelectedItem().toString();
 
-        ArrayList<Movie> recommendedMovies = Controller.recomend(mood, companion);
+        /*ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion);
         for(Movie movie: recommendedMovies) {
             addMovieToContainer(movie);
-        }
+        }*/
 
         slidingPane.slideUp();
     }
@@ -68,16 +67,5 @@ public class SlidingPaneActivity extends Activity {
         this.moodSpinner = (Spinner) findViewById(R.id.spinner_mood);
         this.companionSpinner = (Spinner) findViewById(R.id.spinner_companion);
         this.movieContainer = (LinearLayout) findViewById(R.id.lower_pane_container);
-    }
-
-    private void initOntology() {
-        try {
-            ontologyFileIS = getAssets().open(ONTOLOGY_PATH);
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.i("Ontology creation", "error");
-        }
-
-        Controller.initializeOntology(ontologyFileIS);
     }
 }

@@ -1,17 +1,21 @@
 package knowledge.moviesrecomendator3000.util;
 
-public class Log {
+import android.util.Log;
+
+public class Logger {
 	public static final boolean DEBUG = true;
 	
 	public static void debug(String message){
-		if(Log.DEBUG)
-			System.out.println(message);
+		if(Logger.DEBUG) {
+            //System.out.println(message);
+            Log.i("DEBUG_TAG", message);
+        }
 	}
 	
 	public static void debug(String messageSuccess, String messageFail, boolean condition) {
 		if(condition)
-			Log.debug(messageSuccess);
+			Logger.debug(messageSuccess);
 		else
-			Log.debug(messageFail);
+			Logger.debug(messageFail);
 	}
 }
