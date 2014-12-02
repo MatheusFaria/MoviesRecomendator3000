@@ -85,12 +85,6 @@
         <ObjectProperty IRI="#wantsToSee"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#director"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#title"/>
-    </Declaration>
-    <Declaration>
         <NamedIndividual IRI="#Action"/>
     </Declaration>
     <Declaration>
@@ -625,11 +619,6 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#feels"/>
-        <NamedIndividual IRI="#Default"/>
-        <NamedIndividual IRI="#Happy"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFeltOn"/>
         <NamedIndividual IRI="#Depressed"/>
         <NamedIndividual IRI="#War"/>
@@ -1222,12 +1211,12 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#ToyStory"/>
-        <NamedIndividual IRI="#Action"/>
+        <NamedIndividual IRI="#G"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#has"/>
         <NamedIndividual IRI="#ToyStory"/>
-        <NamedIndividual IRI="#G"/>
+        <NamedIndividual IRI="#Adventure"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isPartOf"/>
@@ -1244,24 +1233,6 @@
         <NamedIndividual IRI="#Western"/>
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#director"/>
-        <NamedIndividual IRI="#DieHard"/>
-        <Literal datatypeIRI="&xsd;string">Bruce Willis</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#director"/>
-        <NamedIndividual IRI="#DieHard2"/>
-        <Literal datatypeIRI="&xsd;string">Bruce Willis</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyRange>
-        <DataProperty IRI="#director"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#title"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
-    </DataPropertyRange>
     <DLSafeRule>
         <Body>
             <ClassAtom>
@@ -1424,39 +1395,6 @@
                 <ObjectProperty IRI="#has"/>
                 <Variable IRI="urn:swrl#movie"/>
                 <Variable IRI="urn:swrl#type"/>
-            </ObjectPropertyAtom>
-        </Head>
-    </DLSafeRule>
-    <DLSafeRule>
-        <Body>
-            <ClassAtom>
-                <Class IRI="#Movie"/>
-                <Variable IRI="urn:swrl#movie1"/>
-            </ClassAtom>
-            <ClassAtom>
-                <Class IRI="#Movie"/>
-                <Variable IRI="urn:swrl#movie2"/>
-            </ClassAtom>
-            <DataRangeAtom>
-                <Datatype abbreviatedIRI="xsd:string"/>
-                <Variable IRI="urn:swrl#director"/>
-            </DataRangeAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#director"/>
-                <Variable IRI="urn:swrl#movie1"/>
-                <Variable IRI="urn:swrl#director"/>
-            </DataPropertyAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#director"/>
-                <Variable IRI="urn:swrl#movie2"/>
-                <Variable IRI="urn:swrl#director"/>
-            </DataPropertyAtom>
-        </Body>
-        <Head>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#isSimilarTo"/>
-                <Variable IRI="urn:swrl#movie1"/>
-                <Variable IRI="urn:swrl#movie2"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
