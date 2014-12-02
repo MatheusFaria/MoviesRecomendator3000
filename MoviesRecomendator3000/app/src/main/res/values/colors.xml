@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="upper_pane_background">#595E60</color>
+    <color name="lower_pane_background">#4D5356</color>
+</resources>

@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -16,9 +17,9 @@ import knowledge.moviesrecomendator3000.R;
 public class SlidingPaneLayout extends ViewGroup {
 
     private ScrollView upperPane, lowerPane;
-    private Point touchBegin, touchEnd;
+    private Point touchBegin;
 
-    private int collapsedHeight;
+    private int collapsedHeight, upperPaneOffset;
     private int paneOffset;
     private int upperPaneTop, lowerPaneTop;
     private int touchSlop;
@@ -31,6 +32,7 @@ public class SlidingPaneLayout extends ViewGroup {
         TypedArray typedAttrs = context.getTheme().obtainStyledAttributes(attributes,
                 R.styleable.SlidingPaneLayout, 0, 0);
         collapsedHeight = typedAttrs.getInt(R.styleable.SlidingPaneLayout_collapsed_height, 0);
+        upperPaneOffset = typedAttrs.getDimensionPixelSize(R.styleable.SlidingPaneLayout_upper_pane_offset, 0);
         typedAttrs.recycle();
 
         paneOffset = 0;
@@ -43,8 +45,8 @@ public class SlidingPaneLayout extends ViewGroup {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        upperPane = (ScrollView) getChildAt(0);
-        lowerPane = (ScrollView) getChildAt(1);
+        upperPane = (ScrollView) getChildAt(1);
+        lowerPane = (ScrollView) getChildAt(0);
     }
 
     @Override
@@ -62,10 +64,8 @@ public class SlidingPaneLayout extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        upperPane.layout(left, upperPaneTop, right, upperPaneTop + upperPane.getMeasuredHeight());
         lowerPane.layout(left, lowerPaneTop, right, lowerPaneTop + lowerPane.getMeasuredHeight());
-
-
+        upperPane.layout(left, upperPaneTop, right, upperPaneTop + upperPane.getMeasuredHeight()+upperPaneOffset);
     }
 
     public void slideUp() {
@@ -97,7 +97,7 @@ public class SlidingPaneLayout extends ViewGroup {
                 intercept = false;
             break;
             case MotionEvent.ACTION_MOVE:
-                touchEnd = new Point((int) event.getX(), (int) event.getY());
+                Point touchEnd = new Point((int) event.getX(), (int) event.getY());
                 float diffY =  touchBegin.y - touchEnd.y;
 
                 if(collapsed && distance(touchBegin, touchEnd) > touchSlop && lowerPaneTop > collapsedHeight) {

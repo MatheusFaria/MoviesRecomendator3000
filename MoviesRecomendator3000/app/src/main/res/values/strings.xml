@@ -18,10 +18,12 @@
         <item>Interested</item>
     </string-array>
     <string-array name="companions_list">
-        <item>Friends</item>
-        <item>Family</item>
+        <item>Friend</item>
+        <item>Parent</item>
+        <item>Sibling</item>
+        <item>Student</item>
         <item>Lover</item>
-        <item>Coworker</item>
+        <item>Co-worker</item>
     </string-array>
 
     <string name="title_activity_sliding_pane">SlidingPane</string>

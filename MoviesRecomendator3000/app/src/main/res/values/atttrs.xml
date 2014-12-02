@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="SlidingPaneLayout">
         <attr name="collapsed_height" format="integer" />
+        <attr name="upper_pane_offset" format="dimension" />
     </declare-styleable>
 </resources>
