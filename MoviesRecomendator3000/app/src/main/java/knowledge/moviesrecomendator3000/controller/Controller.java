@@ -18,45 +18,53 @@ import knowledge.moviesrecomendator3000.util.OntologyHandler;
 
 public class Controller {
 
-	public static ArrayList<Movie> recomend(String mood, String companion, InputStream fileIS) {
-		OntologyHandler ontologyHandler = null;
+    private static OntologyHandler ontologyHandler;
+    private static OWLIndividual user;
+    private static OWLObjectProperty feels, relatedTo;
 
-        try {
-			ontologyHandler = new OntologyHandler(fileIS);
-		} catch (OWLOntologyCreationException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-            e.printStackTrace();
-        }
+	public static ArrayList<Movie> recomend(String mood, String companion) {
 
         ArrayList<Movie> recommendedMovies = new ArrayList<Movie>();
 
         try {
-			OWLIndividual user = ontologyHandler.getIndividual("Default");
 			OWLIndividual family = ontologyHandler.getIndividual(companion);
 			OWLIndividual happy = ontologyHandler.getIndividual(mood);
-
-			OWLObjectProperty feels = ontologyHandler.getObjectProperty("feels");
-			OWLObjectProperty relatedTo = ontologyHandler.getObjectProperty("relatedTo");
 			
 			ontologyHandler.relateIndividuals(relatedTo, user, family);
 			ontologyHandler.relateIndividuals(feels, user, happy);
 			ontologyHandler.syncronizeReasoner();
 			
-			Set<OWLNamedIndividual> recommendeds = ontologyHandler.getIndividualsOf("Recommended");
-			for (OWLNamedIndividual owlNamedIndividual : recommendeds) {
+			Set<OWLNamedIndividual> recommended = ontologyHandler.getIndividualsOf("Recommended");
+			for (OWLNamedIndividual owlNamedIndividual : recommended) {
                 Movie newRecommendedMovie = new Movie();
                 newRecommendedMovie.setTitle("" + owlNamedIndividual);
 
                 recommendedMovies.add(newRecommendedMovie);
 				Log.i("Result", "" + owlNamedIndividual);
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-        ontologyHandler.finalizeReasoner();
-		return recommendedMovies;
+	    return recommendedMovies;
 	}
+
+    public static void initializeOntology(InputStream ontologyFileIS) {
+        try {
+            ontologyHandler = new OntologyHandler(ontologyFileIS);
+        } catch (OWLOntologyCreationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            user = ontologyHandler.getIndividual("Default");
+            feels = ontologyHandler.getObjectProperty("feels");
+            relatedTo = ontologyHandler.getObjectProperty("isRelatedTo");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }

@@ -22,6 +22,7 @@ public class HomeActivity extends Activity {
 
     private static final String ONTOLOGY_PATH = "movies_recomendation.owl";
     private Spinner moodSpinner, companionSpinner;
+    InputStream ontologyFileIS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,19 @@ public class HomeActivity extends Activity {
 
         this.moodSpinner = (Spinner) findViewById(R.id.spinner_mood);
         this.companionSpinner = (Spinner) findViewById(R.id.spinner_companion);
+
+        try {
+            ontologyFileIS = getAssets().open(ONTOLOGY_PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i("Ontology creation", "error");
+        }
+
+        //try {
+            Controller.initializeOntology(ontologyFileIS);
+        //} catch (Exception e) {
+            Log.i("Initialize Ontology", "Error initializing the ontology/");
+        //}
     }
 
 
@@ -53,20 +67,12 @@ public class HomeActivity extends Activity {
     }
 
     public void recommendButtonClick(View view) {
-
         String mood = this.moodSpinner.getSelectedItem().toString();
         String companion = this.companionSpinner.getSelectedItem().toString();
-        InputStream fileIS = null;
-
-        try {
-            fileIS = getAssets().open(ONTOLOGY_PATH);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         String movieTitles = "";
 
-        ArrayList<Movie> recommendedMovies = Controller.recomend(mood, companion, fileIS);
+        ArrayList<Movie> recommendedMovies = Controller.recomend(mood, companion);
         for(Movie recommendedMovie : recommendedMovies) {
             movieTitles += recommendedMovie.getTitle()+"\n";
             Log.i("Recommendation", "I recommend to you: " + recommendedMovie.getTitle());

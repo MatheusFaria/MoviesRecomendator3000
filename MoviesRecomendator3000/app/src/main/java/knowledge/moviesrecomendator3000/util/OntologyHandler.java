@@ -1,8 +1,5 @@
 package knowledge.moviesrecomendator3000.util;
 
-import android.content.Context;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
@@ -22,6 +19,7 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
+import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
@@ -159,18 +157,11 @@ public class OntologyHandler {
 		return manager;
 	}
 
-	
 	public OWLReasoner getReasoner() {
 		return reasoner;
 	}
-	
 
 	public OWLDataFactory getFactory() {
 		return dataFactory;
 	}
-
-    public void finalizeReasoner() {
-        this.reasoner.dispose();
-    }
-	
 }
