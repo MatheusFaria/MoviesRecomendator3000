@@ -917,21 +917,6 @@
         <NamedIndividual IRI="#Entertainment"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#feels"/>
-        <NamedIndividual IRI="#Default"/>
-        <NamedIndividual IRI="#Happy"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isRelatedTo"/>
-        <NamedIndividual IRI="#Default"/>
-        <NamedIndividual IRI="#Friend"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#selects"/>
-        <NamedIndividual IRI="#Default"/>
-        <NamedIndividual IRI="#E.T._The_Extra-terrestrial"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isFeltOn"/>
         <NamedIndividual IRI="#Depressed"/>
         <NamedIndividual IRI="#War"/>

@@ -96,11 +96,13 @@ public class OntologyHandler {
 	}
 	
 	public Set<OWLNamedIndividual> getIndividualsOf(String klass) throws Exception {
-        if(!this.hasClass(klass))
-			throw new Exception("Class " + klass + " does not exist on your ontology");
+        if(!this.hasClass(klass)) {
+            throw new Exception("Class " + klass + " does not exist on your ontology");
+        }
+
 		IRI iri = this.createIRI(klass);
 		OWLClass owlClass = this.dataFactory.getOWLClass(iri);
-		
+
 		NodeSet<OWLNamedIndividual> individualsNodeSet = this.reasoner.getInstances(owlClass, false);
 		Set<OWLNamedIndividual> individuals = individualsNodeSet.getFlattened();
 		

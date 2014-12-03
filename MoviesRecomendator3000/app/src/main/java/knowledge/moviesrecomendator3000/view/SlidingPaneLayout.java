@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -57,9 +55,6 @@ public class SlidingPaneLayout extends ViewGroup {
 
         upperPaneTop = getTop() - paneOffset;
         lowerPaneTop = upperPane.getMeasuredHeight() - paneOffset;
-
-        Log.i("Layout", "Upper Pane Top: "+upperPaneTop);
-        Log.i("Layout", "Lower Pane Top: "+lowerPaneTop);
     }
 
     @Override

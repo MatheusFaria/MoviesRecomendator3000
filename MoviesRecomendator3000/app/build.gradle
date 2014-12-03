@@ -26,4 +26,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile files('libs/org.semanticweb.HermiT.jar')
     compile files('libs/owlapi-distribution-3.4.3-bin.jar')
+    compile files('libs/HermiT.jar')
+    compile files('libs/pellet-jena.jar')
 }

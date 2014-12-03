@@ -45,10 +45,18 @@ public class SlidingPaneActivity extends Activity {
         String mood = this.moodSpinner.getSelectedItem().toString();
         String companion = this.companionSpinner.getSelectedItem().toString();
 
-        /*ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion);
+        try {
+            ontologyFileIS = getAssets().open(ONTOLOGY_PATH);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.i("Ontology creation", "error");
+        }
+
+        movieContainer.removeAllViews();
+        ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion, ontologyFileIS);
         for(Movie movie: recommendedMovies) {
             addMovieToContainer(movie);
-        }*/
+        }
 
         slidingPane.slideUp();
     }
