@@ -10,7 +10,6 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
-import knowledge.moviesrecomendator3000.model.Movie;
 import knowledge.moviesrecomendator3000.util.Logger;
 import knowledge.moviesrecomendator3000.util.OntologyHandler;
 
