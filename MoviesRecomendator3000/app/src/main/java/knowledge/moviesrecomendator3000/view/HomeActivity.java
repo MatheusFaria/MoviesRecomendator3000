@@ -66,11 +66,11 @@ public class HomeActivity extends Activity {
             Log.i("Ontology creation", "error");
         }
 
-        ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion, ontologyFileIS);
+        /*ArrayList<Movie> recommendedMovies = Controller.recommend(mood, companion, ontologyFileIS);
         for(Movie recommendedMovie : recommendedMovies) {
             movieTitles += recommendedMovie.getTitle()+"\n";
             Log.i("Recommendation", "I recommend to you: " + recommendedMovie.getTitle());
-        }
+        }*/
 
         Toast.makeText(getApplicationContext(), movieTitles, Toast.LENGTH_LONG).show();
     }

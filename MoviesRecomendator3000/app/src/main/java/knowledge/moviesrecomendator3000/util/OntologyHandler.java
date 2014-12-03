@@ -5,8 +5,6 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Set;
 
-
-import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
@@ -58,17 +56,7 @@ public class OntologyHandler {
 	}
 
 	private void createReasoner() {
-		OWLReasonerFactory reasonerFactory = new Reasoner.ReasonerFactory();
-
-		OWLReasonerConfiguration config;
-		if(Logger.DEBUG){
-			ConsoleProgressMonitor progressMonitor = new ConsoleProgressMonitor();
-			config = new SimpleConfiguration(progressMonitor);
-		} else {
-			config = new SimpleConfiguration();
-		}
-
-		this.reasoner = reasonerFactory.createReasoner(this.ontology, config);
+		this.reasoner = new MyReasoner(ontology);
 	}
 
 	private void createDataFactory(){
@@ -105,7 +93,7 @@ public class OntologyHandler {
 
 		NodeSet<OWLNamedIndividual> individualsNodeSet = this.reasoner.getInstances(owlClass, false);
 		Set<OWLNamedIndividual> individuals = individualsNodeSet.getFlattened();
-		
+
 		return individuals;
 	}
 	

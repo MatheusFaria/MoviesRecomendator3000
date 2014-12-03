@@ -18,9 +18,9 @@ public class Controller {
 
     private static OntologyHandler ontologyHandler;
 
-    public static ArrayList<Movie> recommend(String mood, String companion, InputStream fileIS) {
+    public static ArrayList<String> recommend(String mood, String companion, InputStream fileIS) {
 
-        ArrayList<Movie> recommendedMovies = new ArrayList<Movie>();
+        ArrayList<String> recommendedMovies = new ArrayList();
 
         try {
             ontologyHandler = new OntologyHandler(fileIS);
@@ -39,11 +39,8 @@ public class Controller {
 
 			Set<OWLNamedIndividual> recommended = ontologyHandler.getIndividualsOf("Recommended");
 			for (OWLNamedIndividual owlNamedIndividual : recommended) {
-                Movie newRecommendedMovie = new Movie();
-                newRecommendedMovie.setTitle("" + owlNamedIndividual);
-
-                recommendedMovies.add(newRecommendedMovie);
-				Logger.debug("" + owlNamedIndividual);
+                recommendedMovies.add(owlNamedIndividual.toString());
+				Logger.debug(owlNamedIndividual.toString());
 			}
 		} catch (OWLOntologyCreationException e) {
             e.printStackTrace();

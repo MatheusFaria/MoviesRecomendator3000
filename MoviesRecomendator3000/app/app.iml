@@ -83,6 +83,7 @@
     <orderEntry type="library" exported="" name="org.semanticweb.HermiT" level="project" />
     <orderEntry type="library" exported="" name="owlapi-distribution-3.4.3-bin" level="project" />
     <orderEntry type="library" exported="" name="pellet-jena" level="project" />
+    <orderEntry type="library" exported="" name="android-async-http-1.4.6" level="project" />
   </component>
 </module>
 

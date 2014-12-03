@@ -3,6 +3,8 @@ package knowledge.moviesrecomendator3000.model;
 public class Movie {
 
 	private String title;
+
+    private String posterURL;
 	
 	public Movie(){
 		
@@ -16,5 +18,12 @@ public class Movie {
 		this.title = title;
 	}
 
+    public String getPosterURL() {
+        return posterURL;
+    }
+
+    public void setPosterURL(String posterURL) {
+        this.posterURL = posterURL;
+    }
 	
 }
