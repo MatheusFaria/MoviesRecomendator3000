@@ -51,8 +51,7 @@ public class SlidingPaneActivity extends Activity implements MovieListener {
         ArrayList<String> moviesIRIs = Controller.recommend(mood, companion, ontologyFileIS);
 
         try {
-            ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs, this);
-
+            MovieController.getMovies(moviesIRIs, this);
         } catch (Exception e) {
             Log.i("Movie Retrieve Error", "error");
             e.printStackTrace();
@@ -65,9 +64,11 @@ public class SlidingPaneActivity extends Activity implements MovieListener {
         View movieEntry = getLayoutInflater().inflate(R.layout.movie_item, null);
 
         TextView movieTitle = (TextView) movieEntry.findViewById(R.id.movie_title);
+        TextView movieDirector = (TextView) movieEntry.findViewById(R.id.movie_director);
         ImageView moviePoster = (ImageView) movieEntry.findViewById(R.id.movie_poster);
 
         movieTitle.setText(movie.getTitle());
+        movieDirector.setText(movie.getDirector());
         moviePoster.setImageBitmap(movie.getPoster());
 
         movieContainer.addView(movieEntry);

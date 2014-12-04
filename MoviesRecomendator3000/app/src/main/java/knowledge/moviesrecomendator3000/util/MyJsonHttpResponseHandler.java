@@ -29,11 +29,14 @@ public class MyJsonHttpResponseHandler extends JsonHttpResponseHandler {
 
         try {
             Movie newMovie = new Movie();
-
-            String movieTitle = movie.getString("Title");
             String posterURL = movie.getString("Poster");
 
-            newMovie.setTitle(movieTitle);
+            newMovie.setTitle(movie.getString("Title"));
+            newMovie.setRate(movie.getString("Rated"));
+            newMovie.setDirector(movie.getString("Director"));
+            newMovie.setGenres(movie.getString("Genre"));
+            newMovie.setImbdID(movie.getString("imdbID"));
+            newMovie.setDescription(movie.getString("Plot"));
             newMovie.setPoster(MovieUtil.getBitmap(posterURL));
 
             slidingPaneActivity.addMovieToContainer(newMovie);

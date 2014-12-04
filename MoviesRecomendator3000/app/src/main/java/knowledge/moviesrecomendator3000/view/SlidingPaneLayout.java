@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Point;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
@@ -97,8 +98,10 @@ public class SlidingPaneLayout extends ViewGroup {
 
                 if(collapsed && distance(touchBegin, touchEnd) > touchSlop && lowerPaneTop > collapsedHeight) {
                     // Just intercept if it is a valid drag and the lower pane is not fully expanded
+                    Log.i("top", ""+lowerPaneTop);
                     intercept = true;
                 } else if(collapsed && diffY<0 && lowerPane.getScrollY() == 0) {
+                    Log.i("top", ""+lowerPaneTop);
                     intercept = true;
                 }
             break;
@@ -106,6 +109,7 @@ public class SlidingPaneLayout extends ViewGroup {
 
         return intercept;
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
