@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     custom:collapsed_height="100"
-    custom:upper_pane_offset="15dp" >
+    custom:upper_pane_offset="15dp">
 
     <ScrollView
         android:id="@+id/lower_scroll_view"
@@ -74,7 +74,6 @@
                 android:onClick="recommendButtonClick" />
 
         </LinearLayout>
-
     </ScrollView>
 
 </knowledge.moviesrecomendator3000.view.SlidingPaneLayout>

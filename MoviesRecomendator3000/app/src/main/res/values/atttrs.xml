@@ -3,5 +3,8 @@
     <declare-styleable name="SlidingPaneLayout">
         <attr name="collapsed_height" format="integer" />
         <attr name="upper_pane_offset" format="dimension" />
+        <attr name="pane_offset" format="integer" />
+        <attr name="collapsed" format="boolean" />
+        <attr name="upper_pane_static" format="boolean" />
     </declare-styleable>
 </resources>
