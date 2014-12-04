@@ -8,5 +8,8 @@
     <style name="CustomActionBarTheme"
         parent="@android:style/Theme.Holo">
         <item name="android:windowActionBarOverlay">true</item>
+
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="android:icon">@android:color/transparent</item>
     </style>
 </resources>

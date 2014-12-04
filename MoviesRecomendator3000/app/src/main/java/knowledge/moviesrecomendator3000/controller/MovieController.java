@@ -33,6 +33,10 @@ public class MovieController {
         return movies;
     }
 
+    public static Movie getMovie(int index){
+        return movies.get(index);
+    }
+
     public static void addMovie(Movie movie) {
         movies.add(movie);
     }

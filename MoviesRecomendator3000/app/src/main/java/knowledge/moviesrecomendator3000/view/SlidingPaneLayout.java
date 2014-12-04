@@ -31,8 +31,10 @@ public class SlidingPaneLayout extends ViewGroup {
         collapsedHeight = typedAttrs.getInt(R.styleable.SlidingPaneLayout_collapsed_height, 0);
         upperPaneOffset = typedAttrs.getDimensionPixelSize(R.styleable.SlidingPaneLayout_upper_pane_offset, 0);
         collapsed = typedAttrs.getBoolean(R.styleable.SlidingPaneLayout_collapsed, false);
+
         paneOffset = typedAttrs.getInt(R.styleable.SlidingPaneLayout_pane_offset, 0);
         upperStatic = typedAttrs.getBoolean(R.styleable.SlidingPaneLayout_upper_pane_static, false);
+
         typedAttrs.recycle();
 
         ViewConfiguration vc = ViewConfiguration.get(context);

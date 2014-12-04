@@ -1,28 +1,48 @@
 package knowledge.moviesrecomendator3000.view;
 
 import android.app.Activity;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import knowledge.moviesrecomendator3000.R;
-import knowledge.moviesrecomendator3000.controller.Controller;
+import knowledge.moviesrecomendator3000.controller.MovieController;
+import knowledge.moviesrecomendator3000.model.Movie;
 
 public class MovieActivity extends Activity {
+
+    private Movie movie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
-        //this.getIntent().getExtras().get("MovieIndex")
+        this.movie = MovieController.getMovie( (Integer) this.getIntent().getExtras().get("MovieIndex"));
+
+        this.getActionBar().setTitle(this.movie.getTitle());
+
+        ImageView img = (ImageView) findViewById(R.id.poster);
+        img.setImageBitmap(this.movie.getPoster());
+
+        TextView directorTextView = (TextView) findViewById(R.id.txtDirector);
+        //directorTextView.setText(this.movie.getDirector);
+
+        TextView rateTextView = (TextView) findViewById(R.id.txtRate);
+        //directorTextView.setText(this.movie.getDirector);
+
+        TextView genresTextView = (TextView) findViewById(R.id.txtGenres);
+        //directorTextView.setText(this.movie.getDirector);
+
+        TextView descriptionTextView = (TextView) findViewById(R.id.txtDescription);
+        //directorTextView.setText(this.movie.getDescription());
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_movie, menu);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getActionBar().setDisplayHomeAsUpEnabled(true);
         return true;
     }
 
