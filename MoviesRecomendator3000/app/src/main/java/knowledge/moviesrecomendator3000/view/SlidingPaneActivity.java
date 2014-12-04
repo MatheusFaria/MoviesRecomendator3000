@@ -1,10 +1,12 @@
 package knowledge.moviesrecomendator3000.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -70,6 +72,15 @@ public class SlidingPaneActivity extends Activity implements MovieListener {
         movieTitle.setText(movie.getTitle());
         movieDirector.setText(movie.getDirector());
         moviePoster.setImageBitmap(movie.getPoster());
+
+        movieEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MovieActivity.class);
+                intent.putExtra("MovieIndex", ((ViewGroup) view.getParent()).indexOfChild(view));
+                startActivity(intent);
+            }
+        });
 
         movieContainer.addView(movieEntry);
     }

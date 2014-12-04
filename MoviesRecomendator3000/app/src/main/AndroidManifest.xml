@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".view.SlidingPaneActivity"
+            android:name="knowledge.moviesrecomendator3000.view.SlidingPaneActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +18,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.HomeActivity"
-            android:label="@string/title_activity_sliding_pane" >
+            android:name="knowledge.moviesrecomendator3000.view.MovieActivity"
+            android:label="@string/title_activity_movie"
+
+            android:parentActivityName="knowledge.moviesrecomendator3000.view.SlidingPaneActivity"
+            android:theme="@style/CustomActionBarTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="knowledge.moviesrecomendator3000.view.SlidingPaneActivity" />
+
         </activity>
     </application>
 
