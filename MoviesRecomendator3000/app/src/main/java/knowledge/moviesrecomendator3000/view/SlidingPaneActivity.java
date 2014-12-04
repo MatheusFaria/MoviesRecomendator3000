@@ -16,8 +16,9 @@ import knowledge.moviesrecomendator3000.R;
 import knowledge.moviesrecomendator3000.controller.Controller;
 import knowledge.moviesrecomendator3000.controller.MovieController;
 import knowledge.moviesrecomendator3000.model.Movie;
+import knowledge.moviesrecomendator3000.util.MovieListener;
 
-public class SlidingPaneActivity extends Activity {
+public class SlidingPaneActivity extends Activity implements MovieListener {
 
     private static final String ONTOLOGY_PATH = "movies_recomendation.owl";
 
@@ -49,8 +50,8 @@ public class SlidingPaneActivity extends Activity {
         ArrayList<String> moviesIRIs = Controller.recommend(mood, companion, ontologyFileIS);
 
         try {
-            ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs);
-            addMoviesToContainer(movies);
+            ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs, this);
+            //addMoviesToContainer(movies);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,6 +69,15 @@ public class SlidingPaneActivity extends Activity {
 
             movieContainer.addView(movieEntry);
         }
+    }
+
+    public void addMovieToContainer(Movie movie){
+        View movieEntry = getLayoutInflater().inflate(R.layout.movie_item, null);
+
+        TextView movieTitle = (TextView) movieEntry.findViewById(R.id.movie_title);
+        movieTitle.setText(movie.getTitle());
+
+        movieContainer.addView(movieEntry);
     }
 
     private void initViews() {

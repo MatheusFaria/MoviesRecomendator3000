@@ -12,12 +12,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import knowledge.moviesrecomendator3000.model.Movie;
+import knowledge.moviesrecomendator3000.util.MovieListener;
+import knowledge.moviesrecomendator3000.view.SlidingPaneActivity;
 
 public class MovieController {
 
     static boolean waiting;
 
-    public static ArrayList<Movie> getMovies(ArrayList<String> moviesIRIs) throws Exception {
+    public static ArrayList<Movie> getMovies(ArrayList<String> moviesIRIs, final MovieListener slidingPaneActivity) throws Exception {
         final ArrayList<Movie> movies = new ArrayList();
 
         waiting = true;
@@ -40,6 +42,7 @@ public class MovieController {
                         newMovie.setTitle(movieTitle);
                         newMovie.setPosterURL(posterURL);
 
+                        slidingPaneActivity.addMovieToContainer(newMovie);
                         movies.add(newMovie);
                         Log.i("Movie", newMovie.getTitle());
                     } catch (JSONException e) {
