@@ -24,9 +24,9 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/movie_poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:src="@drawable/poster"
         android:scaleType="centerCrop"/>s
 </LinearLayout>

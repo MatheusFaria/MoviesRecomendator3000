@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,8 +17,9 @@ import knowledge.moviesrecomendator3000.R;
 import knowledge.moviesrecomendator3000.controller.Controller;
 import knowledge.moviesrecomendator3000.controller.MovieController;
 import knowledge.moviesrecomendator3000.model.Movie;
+import knowledge.moviesrecomendator3000.util.MovieListener;
 
-public class SlidingPaneActivity extends Activity {
+public class SlidingPaneActivity extends Activity implements MovieListener {
 
     private static final String ONTOLOGY_PATH = "movies_recomendation.owl";
 
@@ -49,27 +51,26 @@ public class SlidingPaneActivity extends Activity {
         ArrayList<String> moviesIRIs = Controller.recommend(mood, companion, ontologyFileIS);
 
         try {
-            ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs);
-            while(!MovieController.movies.isEmpty());
-
-            addMoviesToContainer(MovieController.movies);
+            ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs, this);
 
         } catch (Exception e) {
+            Log.i("Movie Retrieve Error", "error");
             e.printStackTrace();
         }
 
         slidingPane.slideUp();
     }
 
-    private void addMoviesToContainer(ArrayList<Movie> movies) {
+    public void addMovieToContainer(Movie movie){
         View movieEntry = getLayoutInflater().inflate(R.layout.movie_item, null);
 
-        for (Movie movie : movies) {
-            TextView movieTitle = (TextView) movieEntry.findViewById(R.id.movie_title);
-            movieTitle.setText(movie.getTitle());
+        TextView movieTitle = (TextView) movieEntry.findViewById(R.id.movie_title);
+        ImageView moviePoster = (ImageView) movieEntry.findViewById(R.id.movie_poster);
 
-            movieContainer.addView(movieEntry);
-        }
+        movieTitle.setText(movie.getTitle());
+        moviePoster.setImageBitmap(movie.getPoster());
+
+        movieContainer.addView(movieEntry);
     }
 
     private void initViews() {

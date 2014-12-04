@@ -1,74 +1,39 @@
 package knowledge.moviesrecomendator3000.controller;
 
-import android.util.Log;
-
 import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import knowledge.moviesrecomendator3000.model.Movie;
+import knowledge.moviesrecomendator3000.util.MovieListener;
+import knowledge.moviesrecomendator3000.util.MovieUtil;
+import knowledge.moviesrecomendator3000.util.MyJsonHttpResponseHandler;
 
 public class MovieController {
 
-    public static boolean waiting;
-    public static ArrayList<Movie> movies;
+    private static ArrayList<Movie> movies;
 
-    public static ArrayList<Movie> getMovies(ArrayList<String> moviesIRIs) throws Exception {
-        movies = new ArrayList();
+    public static ArrayList<Movie> getMovies(ArrayList<String> moviesIRIs,
+            final MovieListener slidingPaneActivity) throws Exception {
 
-        waiting = true;
-        final AsyncHttpClient client = new AsyncHttpClient();
+        movies = new ArrayList<Movie>();
 
         for(String movieIRI : moviesIRIs) {
-            String movieTitle = getMovieTitle(movieIRI);
+            String movieTitle = MovieUtil.getMovieTitle(movieIRI);
             String URL = "http://www.omdbapi.com/?t="+movieTitle+"&r=json";
 
-            client.get(URL, new JsonHttpResponseHandler() {
-                @Override
-                public synchronized void onSuccess(int statusCode, Header[] headers, JSONObject movie) {
-
-                    try {
-                        Movie newMovie = new Movie();
-
-                        String movieTitle = movie.getString("Title");
-                        String posterURL = movie.getString("Poster");
-
-                        newMovie.setTitle(movieTitle);
-                        newMovie.setPosterURL(posterURL);
-
-                        movies.add(newMovie);
-                        Log.i("Movie", newMovie.getTitle());
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            AsyncHttpClient client = new AsyncHttpClient();
+            client.get(URL, new MyJsonHttpResponseHandler(slidingPaneActivity));
         }
 
         return movies;
     }
 
-    private static String getMovieTitle(String movieIRI) throws Exception {
-        String iriParts[] = movieIRI.split("#");
-        String movieTitle = "";
-
-        if (iriParts.length == 2) {
-            movieTitle = iriParts[1].replaceAll("_", "+");
-            movieTitle = movieTitle.substring(0, movieTitle.length()-1);
-        } else {
-            throw new Exception("Invalid Movie IRI");
-        }
-
-        return movieTitle;
+    public static ArrayList<Movie> getMovies() {
+        return movies;
     }
 
-    public static void stopWaiting() {
-        Log.i("waiting", "stopping");
-        waiting = false;
+    public static void addMovie(Movie movie) {
+        movies.add(movie);
     }
 }

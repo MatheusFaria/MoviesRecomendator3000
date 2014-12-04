@@ -1,12 +1,13 @@
 package knowledge.moviesrecomendator3000.model;
 
+import android.graphics.Bitmap;
+
 public class Movie {
 
 	private String title;
-
-    private String posterURL;
+    Bitmap poster;
 	
-	public Movie(){
+	public Movie() {
 		
 	}
 
@@ -18,12 +19,12 @@ public class Movie {
 		this.title = title;
 	}
 
-    public String getPosterURL() {
-        return posterURL;
+    public Bitmap getPoster() {
+        return poster;
     }
 
-    public void setPosterURL(String posterURL) {
-        this.posterURL = posterURL;
+    public void setPoster(Bitmap poster) {
+        this.poster = poster;
     }
 	
 }
