@@ -1,11 +1,15 @@
 package knowledge.moviesrecomendator3000.view;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import knowledge.moviesrecomendator3000.R;
@@ -28,16 +32,16 @@ public class MovieActivity extends Activity {
         img.setImageBitmap(this.movie.getPoster());
 
         TextView directorTextView = (TextView) findViewById(R.id.txtDirector);
-        //directorTextView.setText(this.movie.getDirector);
+        directorTextView.setText(this.movie.getDirector());
 
         TextView rateTextView = (TextView) findViewById(R.id.txtRate);
-        //directorTextView.setText(this.movie.getDirector);
+        rateTextView.setText(this.movie.getRate());
 
         TextView genresTextView = (TextView) findViewById(R.id.txtGenres);
-        //directorTextView.setText(this.movie.getDirector);
+        genresTextView.setText(this.movie.getGenres());
 
         TextView descriptionTextView = (TextView) findViewById(R.id.txtDescription);
-        //directorTextView.setText(this.movie.getDescription());
+        descriptionTextView.setText(this.movie.getDescription());
     }
 
     @Override
