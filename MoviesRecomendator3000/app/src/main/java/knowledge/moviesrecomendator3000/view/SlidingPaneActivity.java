@@ -50,7 +50,9 @@ public class SlidingPaneActivity extends Activity {
 
         try {
             ArrayList<Movie> movies = MovieController.getMovies(moviesIRIs);
-            addMoviesToContainer(movies);
+            while(!MovieController.movies.isEmpty());
+
+            addMoviesToContainer(MovieController.movies);
 
         } catch (Exception e) {
             e.printStackTrace();

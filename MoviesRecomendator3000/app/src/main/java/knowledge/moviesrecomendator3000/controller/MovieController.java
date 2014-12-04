@@ -15,10 +15,11 @@ import knowledge.moviesrecomendator3000.model.Movie;
 
 public class MovieController {
 
-    static boolean waiting;
+    public static boolean waiting;
+    public static ArrayList<Movie> movies;
 
     public static ArrayList<Movie> getMovies(ArrayList<String> moviesIRIs) throws Exception {
-        final ArrayList<Movie> movies = new ArrayList();
+        movies = new ArrayList();
 
         waiting = true;
         final AsyncHttpClient client = new AsyncHttpClient();
