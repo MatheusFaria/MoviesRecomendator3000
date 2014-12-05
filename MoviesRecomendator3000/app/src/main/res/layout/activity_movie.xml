@@ -1,11 +1,11 @@
-<knowledge.moviesrecomendator3000.view.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<knowledge.moviesrecomendator3000.view.StaticSlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sliding_pane"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    custom:collapsed_height="10"
     custom:collapsed="true"
-    custom:upper_pane_offset="15dp" >
+    custom:collapsed_height="500"
+    custom:pane_offset="400">
 
     <ScrollView
         android:id="@+id/lower_scroll_view"
@@ -15,31 +15,33 @@
         android:visibility="visible" >
 
         <LinearLayout
-            android:id="@+id/lower_pane_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/linerlayout1"
-                android:layout_width="fill_parent"
+                android:id="@+id/linerTitleAndRate"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:background="#ff116611"
+                android:orientation="horizontal"
+                android:padding="7dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:singleLine="true"
+                    android:layout_weight="6"
                     android:layout_gravity="start"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/background_light"
-                    android:id="@+id/txtDirector" />
+                    android:id="@+id/txtTitle" />
+
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="end"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp"
                     android:layout_gravity="end"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/background_light"
@@ -47,27 +49,65 @@
 
             </LinearLayout>
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/lower_pane_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/background_light"
-                android:id="@+id/txtDescription" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/background_light"
-                android:id="@+id/txtGenres" />
+                android:layout_margin= "7dp"
+                android:orientation="vertical" >
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/txtDescription" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:text="Director:"
+                    android:id="@+id/directorLabel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp"
+                    android:id="@+id/txtDirector" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genres:"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp"
+                    android:id="@+id/TextView2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="20sp"
+                    android:id="@+id/txtGenres" />
+
+            </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
 
     <ScrollView
         android:id="@+id/upper_scroll_view"
-        android:background="@drawable/upper_pane_background"
-        android:padding="10dp"
+        android:background="@color/upper_pane_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -78,8 +118,8 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="500dp"
                 android:id="@+id/poster" />
 
         </LinearLayout>
@@ -87,4 +127,4 @@
     </ScrollView>
 
 
-</knowledge.moviesrecomendator3000.view.SlidingPaneLayout>
+</knowledge.moviesrecomendator3000.view.StaticSlidingPaneLayout>

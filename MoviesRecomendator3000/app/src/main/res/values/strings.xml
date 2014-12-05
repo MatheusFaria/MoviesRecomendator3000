@@ -9,21 +9,30 @@
     <string name="btn_recommend">Recommend!</string>
 
     <string-array name="moods_list">
-        <item>Happy</item>
-        <item>Sad</item>
-        <item>Depressed</item>
         <item>Angry</item>
-        <item>Good</item>
-        <item>Mad</item>
+        <item>Depressed</item>
+        <item>Disappointed</item>
+        <item>Great</item>
+        <item>Happy</item>
+        <item>Hopeful</item>
         <item>Interested</item>
+        <item>Mad</item>
+        <item>Ok</item>
+        <item>Proud</item>
+        <item>Sad</item>
+        <item>Scared</item>
+        <item>Silly</item>
     </string-array>
     <string-array name="companions_list">
+        <item>Child</item>
+        <item>Classmate</item>
+        <item>Co-worker</item>
         <item>Friend</item>
+        <item>Lover</item>
+        <item>No-one</item>
         <item>Parent</item>
         <item>Sibling</item>
         <item>Student</item>
-        <item>Lover</item>
-        <item>Co-worker</item>
     </string-array>
 
     <string name="title_activity_sliding_pane">SlidingPane</string>

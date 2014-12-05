@@ -26,10 +26,13 @@ public class MovieActivity extends Activity {
         setContentView(R.layout.activity_movie);
         this.movie = MovieController.getMovie( (Integer) this.getIntent().getExtras().get("MovieIndex"));
 
-        this.getActionBar().setTitle(this.movie.getTitle());
+        this.getActionBar().setTitle("");
 
         ImageView img = (ImageView) findViewById(R.id.poster);
         img.setImageBitmap(this.movie.getPoster());
+
+        TextView titleTextView = (TextView) findViewById(R.id.txtTitle);
+        titleTextView.setText(this.movie.getTitle());
 
         TextView directorTextView = (TextView) findViewById(R.id.txtDirector);
         directorTextView.setText(this.movie.getDirector());

@@ -27,7 +27,7 @@ public class StaticSlidingPaneLayout extends SlidingPaneLayout {
 
     @Override
     protected int getUpperPaneBottom() {
-        return upperPaneTop + upperPane.getMeasuredHeight() + upperPaneOffset - paneOffset;
+        return upperPaneTop + upperPane.getMeasuredHeight() - paneOffset;
     }
 
     @Override
