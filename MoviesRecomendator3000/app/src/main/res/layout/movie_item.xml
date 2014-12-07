@@ -18,6 +18,8 @@
             android:id="@+id/movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
             android:gravity="center"
             android:textSize="20dp" />
 
@@ -25,6 +27,7 @@
             android:id="@+id/movie_director"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/background_light"
             android:gravity="center"
             android:layout_marginTop="10dp"
             android:textSize="15dp" />
